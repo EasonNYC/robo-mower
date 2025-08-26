@@ -25,5 +25,12 @@ cd beaglebone-ros2-yocto
 ./setup.sh
 ```
 
-
+## Project Structure
+├── README.md
+├── setup.sh                    # Automated setup
+├── conf/                       # Configuration templates
+├── scripts/                    # Build and utility scripts
+├── layers/meta-robomower/      # Custom robomower recipes
+├── docs/                       # Additional documentation
+└── build/                      # Build directory (created by setup)
 
