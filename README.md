@@ -20,8 +20,8 @@ Base Yocto Linux distribution for BeagleBone Black with ROS2 Humble and Mender O
 
 ### Setup
 ```bash
-git clone https://github.com/EasonNYC/todo.git
-cd beaglebone-ros2-yocto
+git clone https://github.com/EasonNYC/robo-mower.git
+cd robo-mower
 ./setup.sh
 ```
 
