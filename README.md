@@ -1,6 +1,6 @@
-# BeagleBone Black ROS2 Yocto Project
+# Robo-mower: A BeagleBone Black ROS2 Yocto Project
 
-Base Yocto Linux distribution for BeagleBone Black with ROS2 Humble and Mender OTA update capability.
+Easons Robotic lawnmower and Yocto Linux distribution for BeagleBone Black with ROS2 Humble and Mender OTA update capability.
 
 ## Features
 
