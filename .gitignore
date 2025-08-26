@@ -5,6 +5,7 @@ build/downloads/
 build/cache/
 build/conf/local.conf
 build/conf/bblayers.conf
+build/conf/templateconf.cfg
 
 #source layers
 poky/
