@@ -45,7 +45,6 @@ if [ ! -f ../build/conf/bblayers.conf ]; then
 fi
 
 echo "Setup complete!"
-echo "todo:"
-echo "1. Edit build/conf/local.conf with Mender tenant token"
+echo "1. Edit secrets.env with Mender tenant token"
 echo "2. Run: source poky/oe-init-build-env build"
 echo "3. Run: bitbake core-image-minimal"
