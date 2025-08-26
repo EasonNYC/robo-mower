@@ -3,6 +3,14 @@ set -e
 
 echo "Setting up BeagleBone ROS2 Yocto build environment..."
 
+# Load secrets if available
+if [ -f "secrets.env" ]; then
+    source secrets.env
+    echo "Loaded secrets from secrets.env"
+else
+    echo "WARNING: secrets.env not found. Create it with your Mender token."
+fi
+
 # Check if running from correct directory
 if [ ! -f "setup.sh" ]; then
     echo "Error: Run this script from the project root directory"

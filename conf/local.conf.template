@@ -11,8 +11,8 @@ INHERIT += "rm_work"
 # Mender OTA configuration
 INHERIT += "mender-full"
 MENDER_ARTIFACT_NAME = "release-1"
-MENDER_TENANT_TOKEN = "REPLACE_WITH_TOKEN"
-MENDER_SERVER_URL = "https://hosted.mender.io"
+MENDER_TENANT_TOKEN = "${@os.getenv('MENDER_TENANT_TOKEN', 'your-token-here')}"
+MENDER_SERVER_URL = "${@os.getenv('MENDER_SERVER_URL', 'https://hosted.mender.io')}"
 
 # Storage configuration for BeagleBone Black
 MENDER_STORAGE_TOTAL_SIZE_MB = "7500"
