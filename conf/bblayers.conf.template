@@ -1,0 +1,21 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  ##OEROOT##/meta \
+  ##OEROOT##/meta-poky \
+  ##OEROOT##/meta-yocto-bsp \
+  ##BUILDDIR##/../meta-beagleboard \
+  ##BUILDDIR##/../meta-mender/meta-mender-core \
+  ##BUILDDIR##/../meta-openembedded/meta-oe \
+  ##BUILDDIR##/../meta-openembedded/meta-python \
+  ##BUILDDIR##/../meta-openembedded/meta-networking \
+  ##BUILDDIR##/../meta-ros/meta-ros-common \
+  ##BUILDDIR##/../meta-ros/meta-ros2 \
+  ##BUILDDIR##/../meta-ros/meta-ros2-humble \
+  ##BUILDDIR##/../layers/meta-robomower \
+  "

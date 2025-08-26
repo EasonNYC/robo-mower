@@ -1,0 +1,50 @@
+# Machine configuration
+MACHINE = "beaglebone-yocto"
+
+# Build optimization
+BB_NUMBER_THREADS = "4"
+PARALLEL_MAKE = "-j 4"
+
+# Disk space management
+INHERIT += "rm_work"
+
+# Mender OTA configuration
+INHERIT += "mender-full"
+MENDER_ARTIFACT_NAME = "release-1"
+MENDER_TENANT_TOKEN = "REPLACE_WITH_TOKEN"
+MENDER_SERVER_URL = "https://hosted.mender.io"
+
+# Storage configuration for BeagleBone Black
+MENDER_STORAGE_TOTAL_SIZE_MB = "7500"
+MENDER_BOOT_PART_SIZE_MB = "16"
+MENDER_DATA_PART_SIZE_MB = "128"
+
+# ROS2 configuration
+ROS_DISTRO = "humble"
+
+# Image configuration
+IMAGE_INSTALL:append = " \
+    mender-client \
+    ros-humble-ros2cli \
+    ros-humble-demo-nodes-cpp \
+    ros-humble-demo-nodes-py \
+    ros-humble-launch \
+    python3-pip \
+    openssh \
+    systemd \
+    robomower \
+    robomower-navigation \
+    robomower-sensors \
+    "
+
+# Hardware support for robomower
+KERNEL_MODULE_AUTOLOAD += "i2c-dev spi-dev"
+ENABLE_I2C = "1"
+ENABLE_SPI = "1"
+
+# Robomower image customization
+ROBOMOWER_IMAGE_FEATURES = "ssh-server-dropbear package-management"
+IMAGE_FEATURES += "${ROBOMOWER_IMAGE_FEATURES}"
+
+IMAGE_FSTYPES:append = " mender"
+PACKAGECONFIG:append:pn-qemu-system-native = " sdl"

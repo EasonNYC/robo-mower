@@ -1,0 +1,27 @@
+#Yocto build directories
+build/tmp/
+build/sstate-cache/
+build/downloads/
+build/cache/
+build/conf/local.conf
+build/conf/bblayers.conf
+
+#source layers
+poky/
+meta-beagleboard/
+meta-mender/
+meta-ros/
+meta-openembedded/
+
+#build artifacts
+*.img
+*.mender
+*.wic
+*.rootfs.*
+*.tar.*
+
+#IDE and temp files
+.vscode/
+.idea/
+*~
+.DS_Store
