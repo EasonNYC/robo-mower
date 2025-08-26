@@ -26,6 +26,7 @@ cd robo-mower
 ```
 
 ## Project Structure
+```
 ├── README.md
 ├── setup.sh                    # Automated setup
 ├── conf/                       # Configuration templates
@@ -33,4 +34,5 @@ cd robo-mower
 ├── layers/meta-robomower/      # Custom robomower recipes
 ├── docs/                       # Additional documentation
 └── build/                      # Build directory (created by setup)
+```
 
