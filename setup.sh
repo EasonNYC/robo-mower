@@ -25,11 +25,6 @@ git clone -b kirkstone https://github.com/mendersoftware/meta-mender.git || echo
 git clone -b kirkstone https://github.com/ros/meta-ros.git || echo "meta-ros already exists"
 git clone -b kirkstone https://git.openembedded.org/meta-openembedded || echo "meta-openembedded already exists"
 
-# Initialize build environment
-echo "Initializing build environment..."
-cd poky
-source oe-init-build-env ../build
-
 # Copy configuration templates
 echo "Setting up configuration files..."
 mkdir -p build/conf
@@ -40,6 +35,12 @@ cp conf/bblayers.conf.template build/conf/bblayers.conf
 PROJECT_ROOT=$(pwd)
 sed -i "s|##OEROOT##|${PROJECT_ROOT}/poky|g" build/conf/bblayers.conf
 sed -i "s|##BUILDDIR##|${PROJECT_ROOT}/build|g" build/conf/bblayers.conf
+
+# Initialize build environment
+echo "Initializing build environment..."
+cd poky
+source oe-init-build-env ../build
+
 
 echo "Setup complete!"
 echo "1. Edit secrets.env with Mender tenant token"

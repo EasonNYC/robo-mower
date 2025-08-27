@@ -27,3 +27,5 @@ meta-openembedded/
 *~
 .DS_Store
 secrets.env
+
+build/bitbake-cookerdaemon.log
