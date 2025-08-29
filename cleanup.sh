@@ -24,7 +24,7 @@ fi
 
 # Remove cloned repositories
 echo "Removing cloned repositories..."
-for repo in poky meta-beagleboard meta-mender meta-ros meta-openembedded; do
+for repo in poky meta-ti meta-mender meta-ros meta-openembedded; do
     if [ -d "$repo" ]; then
         echo "  Removing $repo..."
         rm -rf "$repo"

@@ -44,5 +44,5 @@ source oe-init-build-env ../build
 
 echo "Setup complete!"
 echo "1. Edit secrets.env with Mender tenant token"
-echo "2. Run: source poky/oe-init-build-env build"
+echo "2. Run: source secrets.env && source poky/oe-init-build-env build"
 echo "3. Run: bitbake core-image-minimal"
