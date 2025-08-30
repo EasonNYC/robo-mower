@@ -9,7 +9,9 @@ BBLAYERS ?= " \
   ##OEROOT##/meta \
   ##OEROOT##/meta-poky \
   ##OEROOT##/meta-yocto-bsp \
-  ##BUILDDIR##/../meta-ti \
+  ##BUILDDIR##/../meta-arm/meta-arm \
+  ##BUILDDIR##/../meta-arm/meta-arm-toolchain \
+  ##BUILDDIR##/../meta-ti/meta-ti-bsp \
   ##BUILDDIR##/../meta-mender/meta-mender-core \
   ##BUILDDIR##/../meta-openembedded/meta-oe \
   ##BUILDDIR##/../meta-openembedded/meta-python \
@@ -17,5 +19,4 @@ BBLAYERS ?= " \
   ##BUILDDIR##/../meta-ros/meta-ros-common \
   ##BUILDDIR##/../meta-ros/meta-ros2 \
   ##BUILDDIR##/../meta-ros/meta-ros2-humble \
-  ##BUILDDIR##/../layers/meta-robomower \
   "

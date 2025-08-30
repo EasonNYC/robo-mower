@@ -8,33 +8,26 @@ PARALLEL_MAKE = "-j 4"
 # Disk space management
 INHERIT += "rm_work"
 
-# Mender OTA configuration
-INHERIT += "mender-full"
-MENDER_ARTIFACT_NAME = "release-1"
-MENDER_TENANT_TOKEN = "${@os.getenv('MENDER_TENANT_TOKEN', 'your-token-here')}"
-MENDER_SERVER_URL = "${@os.getenv('MENDER_SERVER_URL', 'https://hosted.mender.io')}"
+# Mender OTA configuration - temporarily disabled
+#INHERIT += "mender-full"
+#MENDER_ARTIFACT_NAME = "release-1"
+#MENDER_TENANT_TOKEN = "${@os.getenv('MENDER_TENANT_TOKEN', 'your-token-here')}"
+#MENDER_SERVER_URL = "${@os.getenv('MENDER_SERVER_URL', 'https://hosted.mender.io')}"
 
 # Storage configuration for BeagleBone Black
-MENDER_STORAGE_TOTAL_SIZE_MB = "7500"
-MENDER_BOOT_PART_SIZE_MB = "16"
-MENDER_DATA_PART_SIZE_MB = "128"
+#MENDER_STORAGE_TOTAL_SIZE_MB = "7500"
+#MENDER_BOOT_PART_SIZE_MB = "16"
+#MENDER_DATA_PART_SIZE_MB = "128"
 
 # ROS2 configuration
 ROS_DISTRO = "humble"
 
 # Image configuration
 IMAGE_INSTALL:append = " \
-    mender-client \
-    ros-humble-ros2cli \
-    ros-humble-demo-nodes-cpp \
-    ros-humble-demo-nodes-py \
-    ros-humble-launch \
     python3-pip \
-    openssh \
-    systemd \
-    robomower \
-    robomower-navigation \
-    robomower-sensors \
+    rclcpp \
+    examples-rclcpp-minimal-publisher \
+    examples-rclcpp-minimal-subscriber \
     "
 
 # Hardware support for robomower
@@ -46,5 +39,5 @@ ENABLE_SPI = "1"
 ROBOMOWER_IMAGE_FEATURES = "ssh-server-dropbear package-management"
 IMAGE_FEATURES += "${ROBOMOWER_IMAGE_FEATURES}"
 
-IMAGE_FSTYPES:append = " mender"
+#IMAGE_FSTYPES:append = " mender"
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"

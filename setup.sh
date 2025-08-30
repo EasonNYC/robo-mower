@@ -20,6 +20,7 @@ fi
 # Clone required repositories
 echo "Cloning Yocto layers..."
 git clone -b kirkstone git://git.yoctoproject.org/poky.git || echo "poky already exists"
+git clone -b kirkstone https://git.yoctoproject.org/meta-arm || echo "meta-arm already exists"
 git clone -b kirkstone https://git.yoctoproject.org/meta-ti || echo "meta-ti already exists"
 git clone -b kirkstone https://github.com/mendersoftware/meta-mender.git || echo "meta-mender already exists"
 git clone -b kirkstone https://github.com/ros/meta-ros.git || echo "meta-ros already exists"

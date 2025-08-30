@@ -1,15 +1,10 @@
 #Yocto build directories
-build/tmp/
-build/sstate-cache/
-build/downloads/
-build/cache/
-build/conf/local.conf
-build/conf/bblayers.conf
-build/conf/templateconf.cfg
+build/
 
 #source layers
 poky/
-meta-beagleboard/
+meta-arm/
+meta-ti/
 meta-mender/
 meta-ros/
 meta-openembedded/
