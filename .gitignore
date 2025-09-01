@@ -24,3 +24,17 @@ meta-openembedded/
 secrets.env
 
 build/bitbake-cookerdaemon.log
+
+# Yocto external layers
+poky/
+meta-arm/
+meta-ti/
+meta-mender/
+meta-openembedded/
+meta-ros/
+
+# Build directory
+build/
+
+# Secrets
+secrets.env

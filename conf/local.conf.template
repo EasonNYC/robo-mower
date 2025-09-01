@@ -46,17 +46,10 @@ KERNEL_MODULE_AUTOLOAD += "i2c-dev spi-dev"
 ENABLE_I2C = "1"
 ENABLE_SPI = "1"
 
-# User configuration
-EXTRA_USERS_PARAMS = " useradd robomower; \
-                       usermod -P robomower123 robomower; \
-                       usermod -P robomower123 root; \
-                       usermod -a -G sudo robomower; \
-                       usermod -a -G sudo root;"
-
 # Robomower image customization
-ROBOMOWER_IMAGE_FEATURES = "ssh-server-dropbear package-management debug-tweaks"
+ROBOMOWER_IMAGE_FEATURES = "ssh-server-dropbear package-management"
 IMAGE_FEATURES += "${ROBOMOWER_IMAGE_FEATURES}"
-EXTRA_IMAGE_FEATURES += "allow-empty-password allow-root-login"
+# EXTRA_IMAGE_FEATURES += "allow-empty-password allow-root-login"
 
 #IMAGE_FSTYPES:append = " mender"
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"

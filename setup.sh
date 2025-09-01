@@ -26,6 +26,13 @@ git clone -b kirkstone https://github.com/mendersoftware/meta-mender.git || echo
 git clone -b kirkstone https://github.com/ros/meta-ros.git || echo "meta-ros already exists"
 git clone -b kirkstone https://git.openembedded.org/meta-openembedded || echo "meta-openembedded already exists"
 
+# Verify meta-robomower layer exists
+if [ ! -d "meta-robomower" ]; then
+    echo "ERROR: meta-robomower layer not found. This should be in git."
+    exit 1
+fi
+echo "Using existing meta-robomower layer..."
+
 # Copy configuration templates
 echo "Setting up configuration files..."
 mkdir -p build/conf
