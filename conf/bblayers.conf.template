@@ -19,4 +19,5 @@ BBLAYERS ?= " \
   ##BUILDDIR##/../meta-ros/meta-ros-common \
   ##BUILDDIR##/../meta-ros/meta-ros2 \
   ##BUILDDIR##/../meta-ros/meta-ros2-humble \
+  ##BUILDDIR##/../meta-robomower \
   "

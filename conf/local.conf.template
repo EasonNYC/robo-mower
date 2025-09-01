@@ -47,9 +47,10 @@ ENABLE_I2C = "1"
 ENABLE_SPI = "1"
 
 # Robomower image customization
-ROBOMOWER_IMAGE_FEATURES = "ssh-server-dropbear package-management"
+ROBOMOWER_IMAGE_FEATURES = "ssh-server-openssh package-management"
 IMAGE_FEATURES += "${ROBOMOWER_IMAGE_FEATURES}"
-# EXTRA_IMAGE_FEATURES += "allow-empty-password allow-root-login"
+# EXTRA_IMAGE_FEATURES += "allow-empty-password"
 
 #IMAGE_FSTYPES:append = " mender"
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
+PACKAGECONFIG:append:pn-openssh = " pam"
