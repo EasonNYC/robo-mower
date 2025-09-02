@@ -54,3 +54,9 @@ IMAGE_FEATURES += "${ROBOMOWER_IMAGE_FEATURES}"
 #IMAGE_FSTYPES:append = " mender"
 PACKAGECONFIG:append:pn-qemu-system-native = " sdl"
 PACKAGECONFIG:append:pn-openssh = " pam"
+
+# Use systemd as init system
+DISTRO_FEATURES:append = " systemd"
+DISTRO_FEATURES_BACKFILL_CONSIDERED += "sysvinit"
+VIRTUAL-RUNTIME_init_manager = "systemd"
+VIRTUAL-RUNTIME_initscripts = "systemd-compat-units"
