@@ -10,20 +10,22 @@ INHERIT += "rm_work"
 
 # Mender OTA configuration - temporarily disabled
 #INHERIT += "mender-full"
-#MENDER_ARTIFACT_NAME = "release-1"
-#MENDER_TENANT_TOKEN = "${@os.getenv('MENDER_TENANT_TOKEN', 'your-token-here')}"
+#MENDER_ARTIFACT_NAME = "robomower-${DATETIME}"
+#MENDER_TENANT_TOKEN = "${@os.getenv('MENDER_TENANT_TOKEN', '')}"
 #MENDER_SERVER_URL = "${@os.getenv('MENDER_SERVER_URL', 'https://hosted.mender.io')}"
 
-# Storage configuration for BeagleBone Black
-#MENDER_STORAGE_TOTAL_SIZE_MB = "7500"
-#MENDER_BOOT_PART_SIZE_MB = "16"
-#MENDER_DATA_PART_SIZE_MB = "128"
+# Storage configuration for 32GB SD card
+#MENDER_STORAGE_TOTAL_SIZE_MB = "30720"
+#MENDER_BOOT_PART_SIZE_MB = "64"
+#MENDER_DATA_PART_SIZE_MB = "4096"
 
 # ROS2 configuration
 ROS_DISTRO = "humble"
 
 # Image configuration
 IMAGE_INSTALL:append = " \
+    usbutils \
+    net-tools \
     python3-pip \
     ros2launch \
     ros2cli \
